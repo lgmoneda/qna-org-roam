@@ -39,6 +39,13 @@
       (search-forward-regexp "\n\n")
       (buffer-substring (point) (point-max)))))
 
+(defun split-string-at-substring (full-str sub-str)
+  "Split FULL-STR at SUB-STR and return a list of two strings."
+  (if (string-match sub-str full-str)
+      (let ((parts (split-string full-str sub-str)))
+	(list (car parts) (concat sub-str (mapconcat 'identity (cdr parts) sub-str))))
+    (list full-str nil)))
+
 (defun exchange-with-chat-api ()
   "Send the current message to the API and display the response."
   (interactive)
@@ -49,6 +56,6 @@
     (setq result (split-string-at-substring response "SOURCES:"))
     (insert-string-simulating-typing (nth 0 result))
     (if (nth 1 result)
-		(insert (decode-coding-string (nth 1 result) 'utf-8)))
+	(insert (decode-coding-string (nth 1 result) 'utf-8)))
     (goto-char (point-max))
     (insert "\n\n> ")))

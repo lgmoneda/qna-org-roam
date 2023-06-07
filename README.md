@@ -8,10 +8,11 @@ Steps:
 
 2. Run python setup.py install
 
-3. Run python ssor/org_roam_vectordb.py to build the knowledge base
+3. Run python qna-org-roam/org_roam_vectordb.py to build the knowledge base
 
-4. Run python ssor/server.py to serve the application under the 8800 port
+4. Run python qna-org-roam/server.py to serve the application under the 8800 port
 
 5. Add the code from elisp/qna_chat.el to your Emacs configuration
 
 6. Call it using M-x `q-n-a-with-org-roam`
+ag

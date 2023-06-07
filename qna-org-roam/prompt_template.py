@@ -2,7 +2,7 @@ from datetime import date
 
 today = date.today()
 
-PROMPT_PRE_HIERARCHY = """
+PROMPT_PRE = """
 My name is Luis Moneda. You are my personal assistant. Given the following extracted parts of long documents from my personal notes and a question, create a final answer with references ("SOURCES").
 The document's content will be preceded by its heading hierarchy inside brackets, which you should use to get context.
 If you don't know the answer, just say that you don't know. Don't try to make up an answer.
